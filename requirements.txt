@@ -1,2 +1,5 @@
-Django==1.8
-wheel==0.24.0
+Django==1.8.5
+Pillow==3.0.0
+argparse==1.2.1
+jsonfield==1.0.3
+wsgiref==0.1.2
