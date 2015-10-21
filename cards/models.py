@@ -15,7 +15,7 @@ class Card(models.Model):
     """Base card model"""
     name = models.CharField(max_length=30)
     image = models.ImageField(upload_to="card_images")
-    sound = models.FileField(null=True, blank=True)
+    sound = models.FileField(null=True, blank=True, upload_to="card_sounds")
     description = models.TextField()
     # interesante este punto aqui: deja que se creen interacciones con cartas:
     actions = JSONField()
@@ -28,7 +28,7 @@ class Card(models.Model):
 
 
 class Monster(Card):
-    HP = models.IntegerField(default=1)
+    monster_hp = models.IntegerField(default=1)
     # duda aqui en attack: su ataque no seria igual a weapon?:
     monster_attack = models.IntegerField(default=1)
     weapon = models.ForeignKey('Weapon', blank=True)
