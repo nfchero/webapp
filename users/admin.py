@@ -1,14 +1,17 @@
 from django.contrib import admin
-from cards.models import Card
+from users.models import Account, Player
 
 
-@admin.register(Card)
-class CardAdmin(admin.ModelAdmin):
-    list_display = ('name',
-                    'image',
-                    'sound',
-                    'description',
-                    'actions',
-                    'cutscene_before',
-                    'cutscene_after',
-                    'is_open',)
+@admin.register(Account)
+class AccountAdmin(admin.ModelAdmin):
+    list_display = ('email',
+                    'coins',
+                    'avatar',
+                    'token',)
+
+
+@admin.register(Player)
+class PlayerAdmin(admin.ModelAdmin):
+    list_display = ('player_hp',
+                    'player_attack',
+                    'player_weapon',)

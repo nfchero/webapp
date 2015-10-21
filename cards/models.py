@@ -35,7 +35,7 @@ class Monster(Card):
 
 
 class Weapon(Card):
-    weapon_attacK = models.IntegerField()
+    weapon_attack = models.IntegerField()
     duration = models.IntegerField(default=1)
 
 
