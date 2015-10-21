@@ -1,14 +1,20 @@
 from django.db import models
 from jsonfield import JSONField
 
-"""JSONField is a generic textfield that neatly serializes/unserializes
-    JSON objects seamlessly"""
+
+"""
+JSONField is a generic textfield that neatly serializes/unserializes
+JSON objects seamlessly.
+
+If (any) module does not appear, make sure you run pip install requirements.txt
+
+"""
 
 
 class Card(models.Model):
     """Base card model"""
     name = models.CharField(max_length=30)
-    image = models.ImageField()
+    image = models.ImageField(upload_to="card_images")
     sound = models.FileField(null=True, blank=True)
     description = models.TextField()
     # interesante este punto aqui: deja que se creen interacciones con cartas:
